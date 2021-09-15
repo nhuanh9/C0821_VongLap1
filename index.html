@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 100px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<img src="1.png" alt="" onclick="changeImg('img1')" id="img1">
+<img src="3.png" alt="" onclick="changeImg('img2')" id="img2">
+<script>
+    let img1 = document.getElementById('img1');
+    let img2 = document.getElementById('img2');
+
+    function changeImg(anything) {
+        let image = document.getElementById(anything);
+        let newSrc = Math.floor(Math.random() * 8)+1; //random từ >=0 && <1
+        image.src = newSrc+'.png';
+        checkImg();
+
+    }
+    function checkImg() {
+        if (img1.src == img2.src) {
+            alert("Win");
+        }
+    }
+</script>
+</body>
+</html>
